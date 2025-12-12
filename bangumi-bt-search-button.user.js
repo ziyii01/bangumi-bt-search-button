@@ -7,8 +7,8 @@
 // @match        https://bgm.tv/subject/*
 // @icon         https://bgm.tv/img/favicon.ico
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/ziyii01/bangumi-bt-search-button/main/bangumi-mikan-search.user.js
-// @downloadURL  https://raw.githubusercontent.com/ziyii01/bangumi-bt-search-button/main/bangumi-mikan-search.user.js
+// @updateURL    https://raw.githubusercontent.com/ziyii01/bangumi-bt-search-button/main/bangumi-bt-search-button.user.js
+// @downloadURL  https://raw.githubusercontent.com/ziyii01/bangumi-bt-search-button/main/bangumi-bt-search-button.user.js
 // ==/UserScript==
 
 (function () {

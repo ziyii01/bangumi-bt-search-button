@@ -12,7 +12,7 @@
 
 点击下方按钮，使用 [Tampermonkey](https://www.tampermonkey.net/) 或 [Violentmonkey](https://violentmonkey.github.io/) 一键安装本脚本：
 
-<a href="https://raw.githubusercontent.com/ziyii01/bangumi-bt-search-button/main/bangumi-mikan-search.user.js">
+<a href="https://raw.githubusercontent.com/ziyii01/bangumi-bt-search-button/main/bangumi-bt-search-button.user.js">
   <img src="https://custom-icon-badges.demolab.com/badge/-/Install%20with%20Tampermonkey-FF6F61?style=for-the-badge&logo=tampermonkey&logoColor=white" alt="Install with Tampermonkey">
 </a>
 
