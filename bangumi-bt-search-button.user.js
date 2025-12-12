@@ -5,10 +5,10 @@
 // @description  在 Bangumi 条目页标题旁添加下拉按钮，可跳转至 mikanime.tv 或 mikanani.me 的搜索结果。
 // @author       ziyii
 // @match        https://bgm.tv/subject/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=bgm.tv
+// @icon         https://bgm.tv/img/favicon.ico
 // @grant        none
-// @updateURL    https://github.com/ziyii01/bangumi-bt-search-button/raw/main/bangumi-mikan-search.user.js
-// @downloadURL  https://github.com/ziyii01/bangumi-bt-search-button/raw/main/bangumi-mikan-search.user.js
+// @updateURL    https://raw.githubusercontent.com/ziyii01/bangumi-bt-search-button/main/bangumi-mikan-search.user.js
+// @downloadURL  https://raw.githubusercontent.com/ziyii01/bangumi-bt-search-button/main/bangumi-mikan-search.user.js
 // ==/UserScript==
 
 (function () {
