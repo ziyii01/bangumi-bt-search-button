@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bangumi → Mikan 搜索
 // @namespace    http://ziyii.top/
-// @version      1.0
+// @version      1.1
 // @description  在 Bangumi 条目页标题旁添加下拉按钮，可跳转至 mikanime.tv 或 mikanani.me 的搜索结果。
 // @author       ziyii
 // @match        https://bgm.tv/subject/*
@@ -20,7 +20,11 @@
 
   // 提取动画名称（来自带有语义属性的 <a> 标签）
   const titleLink = h1.querySelector('a[property="v:itemreviewed"]');
-  const animeName = titleLink?.getAttribute("title")?.trim();
+  let animeName = titleLink?.getAttribute("title")?.trim();
+  // 若 title 属性不存在，则使用文本内容作为名称
+  if (!animeName) {
+    animeName = titleLink?.textContent?.trim();
+  }
   if (!animeName) return;
 
   // 对名称进行 URL 编码，用于安全拼接搜索链接
