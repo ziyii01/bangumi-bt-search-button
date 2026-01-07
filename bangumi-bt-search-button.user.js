@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bangumi → Mikan & 搜索引擎
 // @namespace    http://ziyii.top/
-// @version      1.2
+// @version      1.3
 // @description  在 Bangumi 条目页标题旁添加下拉按钮，可跳转至 mikanime.tv 或 mikanani.me 的搜索结果，以及搜索引擎
 // @author       ziyii
 // @match        https://bgm.tv/subject/*
@@ -57,6 +57,11 @@
       url: `https://www.baidu.com/s?wd=${encodedName}`,
       category: "search",
     },
+    {
+      name: "本项目 GitHub",
+      url: "https://github.com/ziyii01/bangumi-bt-search-button",
+      category: "other",
+    },
   ];
 
   // 创建包裹容器（用于定位下拉菜单）
@@ -106,7 +111,14 @@
     item.target = "_blank";
     item.rel = "noopener noreferrer";
     // 根据类别设置不同的图标
-    const icon = site.category === "mikan" ? "🔍" : "🌐";
+    let icon;
+    if (site.category === "mikan") {
+      icon = "🔍";
+    } else if (site.category === "search") {
+      icon = "🌐";
+    } else {
+      icon = "📦";
+    }
     item.textContent = `${icon} ${site.name}`;
     item.style.cssText = `
       display: block;
