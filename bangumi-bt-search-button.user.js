@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Bangumi → Mikan 搜索
+// @name         Bangumi → Mikan & 搜索引擎
 // @namespace    http://ziyii.top/
-// @version      1.1
-// @description  在 Bangumi 条目页标题旁添加下拉按钮，可跳转至 mikanime.tv 或 mikanani.me 的搜索结果。
+// @version      1.2
+// @description  在 Bangumi 条目页标题旁添加下拉按钮，可跳转至 mikanime.tv 或 mikanani.me 的搜索结果，以及搜索引擎
 // @author       ziyii
 // @match        https://bgm.tv/subject/*
 // @icon         https://bgm.tv/img/favicon.ico
@@ -30,15 +30,32 @@
   // 对名称进行 URL 编码，用于安全拼接搜索链接
   const encodedName = encodeURIComponent(animeName);
 
-  // 定义要跳转的 Mikan 站点
+  // 定义要跳转的 Mikan 站点和搜索引擎
   const sites = [
     {
       name: "mikanani.me",
       url: `https://mikanani.me/Home/Search?searchstr=${encodedName}`,
+      category: "mikan",
     },
     {
       name: "mikanime.tv",
       url: `https://mikanime.tv/Home/Search?searchstr=${encodedName}`,
+      category: "mikan",
+    },
+    {
+      name: "Google",
+      url: `https://www.google.com/search?q=${encodedName}`,
+      category: "search",
+    },
+    {
+      name: "Bing",
+      url: `https://www.bing.com/search?q=${encodedName}`,
+      category: "search",
+    },
+    {
+      name: "百度",
+      url: `https://www.baidu.com/s?wd=${encodedName}`,
+      category: "search",
     },
   ];
 
@@ -53,7 +70,7 @@
 
   // 主按钮：点击展开下拉菜单
   const mainButton = document.createElement("button");
-  mainButton.textContent = "🔍 Mikan 搜索 ▼";
+  mainButton.textContent = "🔍 搜索 ▼";
   mainButton.style.cssText = `
     padding: 4px 8px;
     background-color: #ff6f61;
@@ -88,7 +105,9 @@
     item.href = site.url;
     item.target = "_blank";
     item.rel = "noopener noreferrer";
-    item.textContent = `🔍 ${site.name}`;
+    // 根据类别设置不同的图标
+    const icon = site.category === "mikan" ? "🔍" : "🌐";
+    item.textContent = `${icon} ${site.name}`;
     item.style.cssText = `
       display: block;
       padding: 6px 12px;
